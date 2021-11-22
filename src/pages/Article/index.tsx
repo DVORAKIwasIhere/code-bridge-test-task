@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { appState } from "../../store/app";
 import { fetchArticles } from "../../store/reducers/ActionCreators";
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { Link } from "react-router-dom";
 
@@ -19,8 +19,11 @@ export const Article = () => {
 
   return (
     <div className="App">
-      1
-      {articles[numericId].title}
+      {articles.length ? articles[numericId].title : "Loading..."}
+      <div>
+        {articles.length ? articles[numericId].description : "Loading..."}
+      </div>
+      <Link to={`/`}>back to home</Link>
     </div>
-  )
+  );
 };
