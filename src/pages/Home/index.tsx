@@ -15,6 +15,7 @@ export const Home = () => {
   );
 
   const [filteredState, setFilteredState] = useState(articles);
+  
   useEffect(() => {
     if (articles.length) {
       setFilteredState(articles);
@@ -25,12 +26,25 @@ export const Home = () => {
 
   const handleFilter = () => {
     const keyWords = searchField.split(" ");
-    console.log(keyWords);
-    const filtered = articles.filter(
-      (article) => article.title.indexOf(keyWords[0]) > -1
+    
+    // const filtered = articles.filter((article) => {
+      // return keyWords.forEach((element) => article.title.indexOf(element) > -1 );
+
+      const filtered = articles.filter((article) => {
+        let isMatch = false
+        for (let index = 0; index < keyWords.length; index++) {
+          const element = article.title.indexOf(keyWords[index]) >-1;
+          if (element) {
+            isMatch = true
+          }      
+        }
+        return isMatch
+      }
     );
+    console.log(keyWords)
+    console.log(filtered)
     setFilteredState(filtered);
-    if (keyWords === null) setFilteredState(articles);
+    if (keyWords.length === 0) setFilteredState(articles);
   };
 
   return (
@@ -41,7 +55,7 @@ export const Home = () => {
           setSearchField(e.target.value);
         }}
       />
-      <button onClick={handleFilter}>suka</button>
+      <button onClick={handleFilter}>фильтрация</button>
       {isLoading && <h1>Now is loading...</h1>}
       {error && <h1>{error}</h1>}
 
