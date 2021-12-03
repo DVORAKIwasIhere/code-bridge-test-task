@@ -8,3 +8,8 @@ export interface IArticle{
     publlishedAt: string;
     content: string
   }
+
+  export interface IArticleModified extends IArticle{
+    titleOverlap: number;
+    descriptionOverlap:number
+  }

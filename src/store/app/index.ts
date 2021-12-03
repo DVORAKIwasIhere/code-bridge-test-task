@@ -20,7 +20,9 @@ const initialState: appState = {
     url: '',
     urlToImage: '',
     publlishedAt: '',
-    content: ''
+    content: '',
+    // titleOverlap: 0,
+    // descriptionOverlap: 0,
   },
 };
 
