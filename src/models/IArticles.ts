@@ -5,7 +5,7 @@ export interface IArticle{
     description: string;
     url: string;
     urlToImage: string;
-    publlishedAt: string;
+    publishedAt: Date;
     content: string
   }
 
