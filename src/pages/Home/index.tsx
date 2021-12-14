@@ -46,7 +46,7 @@ export const Home = () => {
   return (
     <div className="App">
       <span>
-        <Container>
+        <Container sx={{padding: 4}}>
           <SearchBar
             value={searchField}
             onChange={(e) => {

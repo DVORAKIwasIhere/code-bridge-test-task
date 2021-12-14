@@ -20,12 +20,6 @@ export const ArticleList = ({ currentFilteredState }: ArticleListProps) => {
     return { __html: html };
   };
 
-  const theme = createTheme({
-    typography: {
-      fontFamily: ["Montserrat"].join(","),
-    },
-  });
-
   const publishTheme = createTheme({
     typography: {
       fontSize: 12,
@@ -54,7 +48,6 @@ export const ArticleList = ({ currentFilteredState }: ArticleListProps) => {
 
   if (error) return <h1>{error}</h1>;
   return (
-    <ThemeProvider theme={theme}>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -78,7 +71,7 @@ export const ArticleList = ({ currentFilteredState }: ArticleListProps) => {
                       component="img"
                       height="180"
                       image={article.urlToImage}
-                      alt="Loading"
+                      alt=''
                     />
                     <CardContent style={{ height: "100%" }}>
                       <ThemeProvider theme={publishTheme}>
@@ -123,7 +116,7 @@ export const ArticleList = ({ currentFilteredState }: ArticleListProps) => {
                             flexWrap: "wrap",
                           }}
                         >
-                          read more
+                          Read more
                           <ArrowRightAltIcon />
                         </Typography>
                       </ThemeProvider>
@@ -134,6 +127,5 @@ export const ArticleList = ({ currentFilteredState }: ArticleListProps) => {
             );
           })}
       </Grid>
-    </ThemeProvider>
   );
 };

@@ -1,5 +1,5 @@
 body {
-  font: 100% "Montserrat";
+  font-family: "Montserrat", sans-serif;
 }
 
 .icon {
@@ -11,4 +11,9 @@ body {
   align-self: end;
   color: black;
   text-decoration: none;
+  font-weight: 700;
+}
+
+.leftArrow {
+  transform: rotate(180deg);
 }

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 import { setupStore } from './store/store';
 import './styles/fonts.scss'
+import './styles/main.scss'
 // import { store } from './store/store';
 
 const store = setupStore();
